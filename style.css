@@ -1,0 +1,56 @@
+body{
+    background-color: black;
+    color:white;
+    margin:0;
+}
+a{
+    text-decoration: none;
+    color:white;
+}
+.topNavBar .logo .rs{
+    font-size:32px;
+    color:#E8676B;
+    font-family:Aharoni;
+    margin-right:4px;
+}
+.topNavBar .logo .card{
+    font-size:28px;
+    color:#9A9DA2;
+    font-family:Aharoni;
+}
+.topNavBar{
+    margin:34px 193px 34px 193px;
+}
+.topNavBar>nav>ul>li{
+    float: left;
+    list-style: none;
+    margin-top:3px; margin-bottom:3px;
+    margin-left:17px;
+    margin-right:17px;
+    padding-bottom:12px;
+}
+.topNavBar>nav>ul>li>a{
+    color:#C2C4C7;
+    font-size:15px;
+    font-weight:bold;
+    border-bottom:3px solid transparent;
+    padding-bottom:9px;
+
+}
+.topNavBar>nav>ul>li>a:hover{
+    border-bottom-color: #E8676B;
+}
+.topNavBar>nav>ul{
+    margin:0;padding:0;
+}
+.clearfix::after{
+    content:'';
+    display: block;
+    clear: both;
+}
+.topNavBar>a{
+    float:left;
+}
+.topNavBar>nav{
+    float:right;
+}
