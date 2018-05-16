@@ -65,6 +65,10 @@ a{
     background-position:center center;
     background-size:cover;
 }
+.banner .mask {
+    height:515px;
+    background-color:rgba(0,0,0,0.8);
+}
 .topNavBar-inner {
     margin:0px 193px;
 }
