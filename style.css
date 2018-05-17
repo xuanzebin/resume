@@ -194,9 +194,9 @@ main .selfIntroduce {
     font-size:25px;
     font-family:华文行楷;
     color:#7A7A7A;
-<<<<<<< HEAD
 }
-section.skills {
+section.skills ,
+section.portfolio {
     max-width:930px;
     margin-left:auto;
     margin-right:auto;
@@ -206,11 +206,13 @@ section.skills h3 {
     color:#3F4653;
     margin-bottom:8px;
 }
-section.skills h2 {
+section.skills h2,
+section.portfolio h2 {
     text-align: center; 
     margin-top:67px;
     margin-bottom:29px;
     font-size:30px;
+    color:#3D4451;
 }
 section.skills>ol li {
     float:left;
@@ -223,16 +225,78 @@ section.skills>ol li:nth-child(even) {
 section.skills ol li .progressBar{
     height:5px;
     background: #FAE1E1;
+    border-radius: 3px;
 }
 section.skills ol li .progress {
     height:100%;
     background: #E8676B;
     width:50%;
+    border-radius: 3px;
 }
 section.skills ol {
     padding:39px 50px 17px 50px;
     background:white;
     box-shadow: 0px 5px 29px -8px rgba(0,0,0,0.75);
-=======
->>>>>>> 0b7f213dec37618f0389a53652571a91872cf15d
+    
 }
+section.portfolio {
+    text-align: center;
+}
+section.portfolio nav ol li {
+    float:left;
+    margin-left:50px;
+    color:#3D4451;
+    text-align: center;
+    cursor:pointer;
+    margin-bottom:14px;
+}
+section.portfolio nav ol li:nth-child(1) {
+    margin-left:0;
+}
+section.portfolio nav ol {
+    display:inline-block;
+    vertical-align:top;
+}
+section.portfolio nav {
+    text-align: center;
+    padding-top:3px;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom:30px;
+}
+section.portfolio nav .Bar {
+    height:5px;
+    background: white;
+    border-radius:3px;
+}
+section.portfolio nav .Bar-inner {
+    height:100%;
+    background: #E8676B;
+    border-radius:3px;
+    transition:all 0.6s;
+}
+section.portfolio nav .Bar.state-1 .Bar-inner{
+    width:45px;
+}
+section.portfolio nav .Bar.state-2 .Bar-inner{
+    width:60px;
+    margin-left:69px;
+}
+section.portfolio nav .Bar.state-3 .Bar-inner{
+    width:95px;
+    margin-left:159px;
+}
+section.portfolio .works{
+   position:relative;
+   margin-bottom:100px;
+}
+section.portfolio .works .small ,
+section.portfolio .works .big {
+    position:absolute;
+    box-shadow: 0px 5px 29px -8px rgba(0,0,0,0.75);
+}
+section.portfolio .works .small img ,
+section.portfolio .works .big img {
+    vertical-align: top;
+}
+
