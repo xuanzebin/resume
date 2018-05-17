@@ -10,6 +10,11 @@ a{
 *{
     margin:0;padding:0;
 }
+
+ul,ol {
+    text-decoration: none;
+    list-style:none;
+}
 .topNavBar .logo .rs{
     font-size:32px;
     color:#E8676B;
@@ -77,6 +82,8 @@ a{
     margin-left:auto;
     margin-right:auto;
     background-color:#FFFFFF;
+    margin-top:-350px;
+    box-shadow: 0px 5px 29px -8px rgba(0,0,0,0.75);
 }
 .userCard .pictureAndText {
     padding:60px 50px 45px 50px;
@@ -158,4 +165,71 @@ a{
     height:26px;
     fill:white;
     vertical-align:top;
+}
+main .downloadResume {
+    border:1px solid #CDCFD1;
+    border-radius:3px;
+    padding:25px 58px;
+    display: inline-block;
+    font-size:15px;
+    font-weight:bold;
+    line-height:16px;
+    transition: box-shadow 0.2s;
+    background: #EFEFEF;
+
+}
+main .downloadResumeWrapper {
+    text-align: center;
+    margin:35px 0;
+}
+main .downloadResume:hover {
+    box-shadow: 0px 5px 19px -6px rgba(0,0,0,0.75);
+}
+main .selfIntroduce {
+    max-width:930px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+    line-height:40px;
+    font-size:25px;
+    font-family:华文行楷;
+    color:#7A7A7A;
+}
+section.skills {
+    max-width:930px;
+    margin-left:auto;
+    margin-right:auto;
+}
+section.skills h3 {
+    font-size:13px;
+    color:#3F4653;
+    margin-bottom:8px;
+}
+section.skills h2 {
+    text-align: center; 
+    margin-top:67px;
+    margin-bottom:29px;
+    font-size:30px;
+}
+section.skills>ol li {
+    float:left;
+    width:47%;
+    padding-bottom:34px;
+}
+section.skills>ol li:nth-child(even) {
+    float:right;
+}
+section.skills ol li .progressBar{
+    height:5px;
+    background: #FAE1E1;
+}
+section.skills ol li .progress {
+    height:100%;
+    background: #E8676B;
+    width:50%;
+}
+section.skills ol {
+    padding:39px 50px 17px 50px;
+    background:white;
+    box-shadow: 0px 5px 29px -8px rgba(0,0,0,0.75);
 }
