@@ -194,6 +194,7 @@ main .selfIntroduce {
     font-size:25px;
     font-family:华文行楷;
     color:#7A7A7A;
+<<<<<<< HEAD
 }
 section.skills {
     max-width:930px;
@@ -232,4 +233,6 @@ section.skills ol {
     padding:39px 50px 17px 50px;
     background:white;
     box-shadow: 0px 5px 29px -8px rgba(0,0,0,0.75);
+=======
+>>>>>>> 0b7f213dec37618f0389a53652571a91872cf15d
 }
