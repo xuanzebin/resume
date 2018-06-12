@@ -53,8 +53,8 @@
         <div class="banner" style="background-image: url(./img/rs-cover-2-2-1-1.jpg)">
             <div class="mask"></div>
         </div>
-        <main>
-            <div id="userCard" class="userCard" >
+        <main data-x id="userCard">
+            <div class="userCard" >
                 <div class="pictureAndText clearfix">
                     <div class="picture">
                         <img src="./img/IMG_0018.JPG" width=240px; height=345; alt="头像">
@@ -112,7 +112,7 @@
             </p>
             <p class="selfIntroduce">你好，我叫宣泽彬。<br>目前正在努力学习前端！</p>
         </main>
-        <section id="skills" class="skills">
+        <section data-x id="skills" class="skills">
             <h2>技能</h2>
             <ol class="clearfix">
               <li> <h3>HTML 5 &amp; CSS 3</h3>
@@ -153,7 +153,7 @@
               </li>
             </ol>
         </section>
-        <section id="portfolio" class="portfolio">
+        <section data-x id="portfolio" class="portfolio">
             <h2>作品集</h2>
             <nav>
               <ol class="clearfix">
@@ -192,15 +192,52 @@
       
           </section>
     </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
     <script>
-        setTimeout(function(){siteWelcome.classList.remove('active')},1300)
+        setTimeout(function(){siteWelcome.classList.remove('active')},1000)
+        setTimeout(function(){
+            onSet()
+            topNavBarOnSet()
+        },1000)
+        let pageHeight=document.documentElement.clientHeight
+        window.onresize=function () {
+            pageHeight=document.documentElement.clientHeight
+            console.log(pageHeight)
+        }
         window.onscroll=function(listenToScroll) {
             if (window.scrollY>0) {
                 topNavBar.classList.add('active')
             } else {
                 topNavBar.classList.remove('active')
             }
+            onSet()
         }
+        function topNavBarOnSet() {
+            topNavBar.classList.add('onset')
+        }
+        function onSet() {
+            let specialTags=document.querySelectorAll('[data-x]')
+            let minTag=0
+            for (i=1;i<specialTags.length;i++) {
+                // if (specialTags[i].getBoundingClientRect().top>0 && (window.scrollY+pageHeight)>=(specialTags[i].offsetTop+specialTags[i].clientHeight/2))
+                              
+                if (Math.abs(specialTags[i].offsetTop-window.scrollY)<Math.abs(specialTags[minTag].offsetTop-window.scrollY)+350)
+                minTag=i 
+
+            }
+            specialTags[minTag].classList.add('onset')
+            let aTags=document.querySelector('a[href="#'+specialTags[minTag].id+'"]')
+            let liTags=aTags.parentNode
+            let liTagsSibling=liTags.parentNode.children
+            for (let i=0;i<liTagsSibling.length;i++) {
+                liTagsSibling[i].classList.remove('highlight')
+            }
+            liTags.classList.add('highlight')
+            if (window.scrollY===0) liTags.classList.remove('highlight')
+        }
+        
+
+
         let liTags=document.getElementsByClassName('menuTrigger')
         for (let i=0;i<liTags.length;i++) {
             liTags[i].onmouseenter =function(mouseEnter) {
@@ -213,12 +250,32 @@
             }
         }
         let aTags=document.querySelectorAll('nav>ul>li>a')
+
+
+
+        function animate(time) {
+            requestAnimationFrame(animate);
+            TWEEN.update(time);
+        }
+        requestAnimationFrame(animate);
         for (let i=0;i<aTags.length;i++) {
             aTags[i].onclick=function(aTagsOnclick) {
                 aTagsOnclick.preventDefault()
                 let aTarget=aTagsOnclick.currentTarget
                 let aTagId=document.querySelector(aTarget.getAttribute('href'))
-                window.scrollTo(0,aTagId.offsetTop-100)
+                var targetTop=aTagId.offsetTop-100
+                var currentTop=window.scrollY
+                var coords = {y:currentTop}; 
+                var slideTime=Math.abs(targetTop-currentTop)/1.3
+                if (slideTime<400) {slideTime=400} else {if (slideTime>800) slideTime=800}
+                console.log(slideTime)
+                var tween = new TWEEN.Tween(coords)
+                .to({y:targetTop}, slideTime) 
+                .easing(TWEEN.Easing.Quadratic.InOut) 
+                .onUpdate(function() { 
+                    window.scrollTo(0,coords.y)
+                })
+                .start();
             }
         }
     </script>

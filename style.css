@@ -2,10 +2,20 @@ body{ background-color: #EFEFEF;color:black; margin:0;}
 a{text-decoration: none;color:black;}
 *{    margin:0;padding:0;}
 ul,ol {text-decoration: none;list-style:none;}
+[data-x] {
+    transform: translateY(200px);
+    opacity: 0;
+    transition: all 0.5s;
+}
+[data-x].onset,.topNavBar.onset {
+    transform:translateY(0);
+    opacity: 1;
+}
 .clearfix::after{ content:''; display: block;clear: both;}
 .topNavBar .logo .rs{font-size:32px;color:#E8676B; font-family:Aharoni;margin-right:4px;}
 .topNavBar .logo .card{font-size:28px;color:#9A9DA2;font-family:Aharoni;}
-.topNavBar {padding:34px 0px 34px 0px;width:100%; position:fixed;left:0; top:0;  transition:all 0.3s; color:#C2C4C7; }
+.topNavBar {padding:34px 0px 34px 0px;width:100%; position:fixed;left:0; top:0;  transition:all 0.3s; color:#C2C4C7;
+    transform: translateY(-200px);  opacity: 0;transition: all 0.5s; }
 .topNavBar nav>ul>li{position:relative; float: left;list-style: none; margin-top:3px; margin-bottom:3px;margin-left:17px;margin-right:17px;padding-bottom:12px;}
 .topNavBar nav>ul>li>a{position:relative;color:inherit;font-size:15px; font-weight:bold;padding-bottom:9px;}
 .topNavBar nav>ul>li .submenu{display:none; position:absolute; right:0; top:79%; white-space:nowrap; padding:13px 15px 7px 15px;background:white;box-shadow: 0 0 10px  rgba(0,0,0,0.25);}
@@ -21,7 +31,8 @@ ul,ol {text-decoration: none;list-style:none;}
         opacity: 1;
     }
 }
-.topNavBar nav>ul .menuTrigger.active>a::after {content:'';position: absolute;left:0;top:100%;height:3px;background-color: #E8676B; animation:NavSlide 0.2s linear;width:100%;}
+.topNavBar nav>ul .menuTrigger.active>a::after,
+.topNavBar nav>ul .menuTrigger.highlight>a::after {content:'';position: absolute;left:0;top:100%;height:3px;background-color: #E8676B; animation:NavSlide 0.2s linear;width:100%;}
 @keyframes NavSlide{0% {width:0;}100% {width:100%;}}
 .topNavBar nav>ul{ margin:0;padding:0;}
 .topNavBar a{float:left; color: inherit; }
@@ -86,7 +97,7 @@ ul,ol {text-decoration: none;list-style:none;}
     display:inline-block;
     margin:17px 32px;
     border-radius: 50%;
-    width:40px; 
+    width:40px;
     line-height:26px;
     padding:7px 0;
 }
@@ -141,7 +152,7 @@ section.skills h3 {
 }
 section.skills h2,
 section.portfolio h2 {
-    text-align: center; 
+    text-align: center;
     margin-top:67px;
     margin-bottom:29px;
     font-size:30px;
@@ -159,18 +170,24 @@ section.skills ol li .progressBar{
     height:5px;
     background: #FAE1E1;
     border-radius: 3px;
+    overflow: hidden;
 }
 section.skills ol li .progress {
     height:100%;
     background: #E8676B;
     width:50%;
     border-radius: 3px;
+    transform: translate(-100%);
+    transition: all 1s;
+}
+section.skills.onset>ol .progress {
+    transform: translate(0);
 }
 section.skills ol {
     padding:39px 50px 17px 50px;
     background:white;
     box-shadow: 0px 5px 29px -8px rgba(0,0,0,0.75);
-    
+
 }
 section.portfolio {
     text-align: center;
