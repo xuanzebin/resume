@@ -5,7 +5,7 @@ ul,ol {text-decoration: none;list-style:none;}
 [data-x] {
     transform: translateY(200px);
     opacity: 0;
-    transition: all 0.5s;
+    transition: all 0.8s;
 }
 [data-x].onset,.topNavBar.onset {
     transform:translateY(0);
