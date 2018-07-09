@@ -7,14 +7,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
         <link rel="stylesheet" href="./loading.css">
         <link rel="stylesheet" href="./style.css">
-        <style type="text/css">
-            .icon {
-               width: 1em; height: 1em;
-               vertical-align: -0.15em;
-               fill: currentColor;
-               overflow: hidden;
-            }
-        </style>
     </head>
     <body>
         <div id="siteWelcome" class="site-welcome active">
@@ -159,20 +151,18 @@
             <h2>作品集</h2>
             <div class="slidesWrapper">
                 <div class="swiper-container">
-                    <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
-                        <!-- Slides -->
-                        <img class="swiper-slide" src="./img/works/nav-keyboard.jpg">
-                        <img class="swiper-slide" src="./img/works/canvas.jpg">
-                        <img class="swiper-slide" src="./img/works/apple-style-slides.jpg">
+                        <a class="swiper-slide" href="https://xuanzebin.github.io/js-demo/" target="_blank">
+                            <img src="./img/works/nav-keyboard.jpg">
+                        </a>
+                        <a class="swiper-slide" href="https://xuanzebin.github.io/canvas-demo/" target="_blank">
+                            <img src="./img/works/canvas.jpg">
+                        </a>
+                        <a class="swiper-slide" href="https://xuanzebin.github.io/apple-slides/" target="_blank">
+                            <img src="./img/works/apple-style-slides.jpg">
+                        </a>
                     </div>
-                    <!-- If we need pagination -->
                     <div class="swiper-pagination"></div>
-                
-                    <!-- If we need navigation buttons -->
-                
-                    <!-- If we need scrollbar
-                    <div class="swiper-scrollbar"></div> -->
                 </div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
@@ -181,122 +171,9 @@
     </body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
-    <script>
-        var mySwiper = new Swiper ('.swiper-container', {
-        //   // Optional parameters
-        //   direction: 'vertical',
-          autoplay:{
-              delay:3000,
-              stopOnLastSlide: false,
-              disableOnInteraction: true,
-          },
-          loop: true,
-      
-          // If we need pagination
-          pagination: {
-            el: '.swiper-pagination',
-          },
-      
-          // Navigation arrows
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-      
-        //   // And if we need scrollbar
-        //   scrollbar: {
-        //     el: '.swiper-scrollbar',
-        //   },
-        })
-        $('.slidesWrapper').on('mouseenter',()=>{
-            mySwiper.autoplay.stop();
-        })
-        $('.slidesWrapper').on('mouseleave',()=>{
-            mySwiper.autoplay.start();
-        })
-    </script>
-    <script>
-        setTimeout(function(){siteWelcome.classList.remove('active')},1000)
-        setTimeout(function(){
-            onSet()
-            topNavBarOnSet()
-        },1000)
-        let pageHeight=document.documentElement.clientHeight
-        window.onresize=function () {
-            pageHeight=document.documentElement.clientHeight
-            console.log(pageHeight)
-        }
-        window.onscroll=function(listenToScroll) {
-            if (window.scrollY>0) {
-                topNavBar.classList.add('active')
-            } else {
-                topNavBar.classList.remove('active')
-            }
-            onSet()
-        }
-        function topNavBarOnSet() {
-            topNavBar.classList.add('onset')
-        }
-        function onSet() {
-            let specialTags=document.querySelectorAll('[data-x]')
-            let minTag=0
-            for (i=1;i<specialTags.length;i++) {
-                // if (specialTags[i].getBoundingClientRect().top>0 && (window.scrollY+pageHeight)>=(specialTags[i].offsetTop+specialTags[i].clientHeight/2))
-                if (Math.abs(specialTags[i].offsetTop-window.scrollY)<Math.abs(specialTags[minTag].offsetTop-window.scrollY)+380)
-                minTag=i 
-            }
-            specialTags[minTag].classList.add('onset')
-            let aTags=document.querySelector('a[href="#'+specialTags[minTag].id+'"]')
-            let liTags=aTags.parentNode
-            let liTagsSibling=liTags.parentNode.children
-            for (let i=0;i<liTagsSibling.length;i++) {
-                liTagsSibling[i].classList.remove('highlight')
-            }
-            liTags.classList.add('highlight')
-            if (window.scrollY===0) liTags.classList.remove('highlight')
-        }
-        
-
-
-        let liTags=document.getElementsByClassName('menuTrigger')
-        for (let i=0;i<liTags.length;i++) {
-            liTags[i].onmouseenter =function(mouseEnter) {
-                let liTarget=mouseEnter.currentTarget
-                liTarget.classList.add('active')
-            }
-            liTags[i].onmouseleave=function(mouseLeave) {
-                let liTarget=mouseLeave.currentTarget
-                liTarget.classList.remove('active')
-            }
-        }
-        let aTags=document.querySelectorAll('nav>ul>li>a')
-
-
-
-        function animate(time) {
-            requestAnimationFrame(animate);
-            TWEEN.update(time);
-        }
-        requestAnimationFrame(animate);
-        for (let i=0;i<aTags.length;i++) {
-            aTags[i].onclick=function(aTagsOnclick) {
-                aTagsOnclick.preventDefault()
-                let aTarget=aTagsOnclick.currentTarget
-                let aTagId=document.querySelector(aTarget.getAttribute('href'))
-                var targetTop=aTagId.offsetTop-100
-                var currentTop=window.scrollY
-                var coords = {y:currentTop}; 
-                var slideTime=Math.abs(targetTop-currentTop)/1.3
-                if (slideTime<400) {slideTime=400} else {if (slideTime>800) slideTime=800}
-                console.log(slideTime)
-                var tween = new TWEEN.Tween(coords)
-                .to({y:targetTop}, slideTime) 
-                .easing(TWEEN.Easing.Quadratic.InOut) 
-                .onUpdate(function() { 
-                    window.scrollTo(0,coords.y)
-                })
-                .start();
-            }
-        }
-    </script>
+    <script src="./js/welcome-init.js"></script>
+    <script src="./js/init-swiper.js"></script>
+    <script src="./js/smoothly-navigation.js"></script>
+    <script src="./js/active-topnavBar.js"></script>
+    <script src="./js/auto-slide-up.js"></script>
 </html>
