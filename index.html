@@ -172,8 +172,14 @@
             <h2>留言板</h2>
             <ol class="messageBoard"></ol>
             <form method="POST" id="message">
-                <label>用户名<input type="text" name="name"></label>
-                <label>留言内容<input type="text" name="content"></label>
+                <div>
+                    <!-- <label>用户名<input type="text" name="name"></label> -->
+                    <label>用户名:</label><input type="text" name="name"></label>
+                </div>
+                <div>
+                    <!-- <label>留言内容<input type="text" name="content"></label> -->
+                    <label>留言内容:<textarea name="content" wrap="hard"></textarea></label>
+                </div>
                 <input type="submit" value="留言提交">
             </form>
         </section>
