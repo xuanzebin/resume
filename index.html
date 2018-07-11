@@ -29,6 +29,7 @@
                                     <li>作品3</li>
                                 </ul>
                             </li>
+                            <li class="menuTrigger"><a href="#messageBoard">留言板</a></li>
                             <li class="menuTrigger">
                                 <a href="#">博客</a>
                                 <ul class="submenu">
@@ -37,7 +38,6 @@
                                     <li>博客3</li>
                                 </ul>
                             </li>
-                            <li class="menuTrigger"><a href="#">日历</a></li>
                             <li class="menuTrigger"><a href="#">联系方式</a></li>
                             <li class="menuTrigger"><a href="#">其他</a></li>
                         </ul>
@@ -150,7 +150,7 @@
         <section data-x id="portfolio" class="portfolio">
             <h2>作品集</h2>
             <div class="slidesWrapper">
-                <div class="swiper-container">
+                <div class="swiper-container">      
                     <div class="swiper-wrapper">
                         <a class="swiper-slide" href="https://xuanzebin.github.io/js-demo/" target="_blank">
                             <img src="./img/works/nav-keyboard.jpg">
@@ -168,9 +168,20 @@
                 <div class="swiper-button-next"></div>
             </div>
         </section>
+        <section data-x class="message" id="messageBoard">
+            <h2>留言板</h2>
+            <ol class="messageBoard"></ol>
+            <form method="POST" id="message">
+                <label>用户名<input type="text" name="name"></label>
+                <label>留言内容<input type="text" name="content"></label>
+                <input type="submit" value="留言提交">
+            </form>
+        </section>
     </body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.7.3/dist/av-min.js"></script>
+    <script src="./js/message.js"></script>
     <script src="./js/welcome-init.js"></script>
     <script src="./js/init-swiper.js"></script>
     <script src="./js/smoothly-navigation.js"></script>

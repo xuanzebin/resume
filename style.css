@@ -1,6 +1,6 @@
 body{ background-color: #EFEFEF;color:black; margin:0;}
 a{text-decoration: none;color:black;}
-*{    margin:0;padding:0;}
+*{margin:0;padding:0;}
 ul,ol {text-decoration: none;list-style:none;}
 [data-x] { transform: translateY(200px); opacity: 0;transition: all 0.8s;}
 [data-x].onset,.topNavBar.onset {    transform:translateY(0);    opacity: 1;}
@@ -66,7 +66,8 @@ section.skills ,
 section.portfolio { max-width:930px; margin-left:auto; margin-right:auto;}
 section.skills h3 { font-size:13px; color:#3F4653; margin-bottom:8px;}
 section.skills h2,
-section.portfolio h2 { text-align: center; margin-top:67px; margin-bottom:29px; font-size:30px; color:#3D4451;}
+section.portfolio h2,
+section.message { text-align: center; margin-top:67px; margin-bottom:29px; font-size:30px; color:#3D4451;}
 section.skills>ol li { float:left; width:47%; padding-bottom:34px;}
 section.skills>ol li:nth-child(even) { float:right;}
 section.skills ol li .progressBar{ height:5px; background: #FAE1E1; border-radius: 3px; overflow: hidden;}
@@ -79,3 +80,40 @@ section .swiper-button-next{    outline:none;   background-color:white;    box-s
     height:78px;    border-radius:50%;    right:100%;    left:auto;}
 section .swiper-button-next{    left:100%;    right:auto;}
 section.portfolio .swiper-container img{height:666px; align-items: center;}
+section.message{
+    margin-bottom:150px;    
+}
+section.message form{
+    text-align: left;
+    font-size:24px;
+    width:930px;
+    margin:20px auto;
+}
+section.message label{
+    margin-right:30px;
+}
+section.message ol {
+    display: inline-block;
+    width:930px;
+    text-align: left;
+    margin:20px auto;
+    font-size: 24px;
+    border-top:3px solid #ddd;
+    border-radius:9px;
+}
+section.message li {
+    padding:15px;
+    border-bottom:3px solid #ddd;
+    border-right:3px solid #ddd;
+    border-left:3px solid #ddd;
+    border-radius:9px;
+    box-shadow: 0px 0px 8px -4px rgba(0,0,0,0.75); 
+}
+section.message input[name="name"],
+section.message input[name="content"] {
+    margin-left:5px;
+}
+section.message input[value="留言提交"]{
+    font-size: 20px;
+    font-family: "华文中宋";
+}
