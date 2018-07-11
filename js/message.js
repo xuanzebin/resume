@@ -50,12 +50,17 @@
             if (name==='') {alert('请输入用户名!')} else if (content==='') {alert('请输入内容!')} else {
                 this.model.save(name,content).then(function(object) {
                     var liTag=document.createElement('li')
+                    var spanTagName=document.createElement('span')
+                    var spanTagContent=document.createElement('span')
                     var olTag=document.querySelector('section.message > .messageBoard')
-                    content=content.replace(/\r\n/g,"<BR>")
-                    content=content.replace(/\n/g,"<BR>")
-                    content=content.replace(/ /g,"&nbsp;")
-                    liTag.innerHTML=`<span style="color:red;">${name}  :</span><br>${content}`
+                    // content=content.replace(/ /g,"&nbsp;")
+                    spanTagName.innerText=name+`  :\n`
+                    spanTagName.style="color:red;"
+                    spanTagContent.style="white-space:pre;"
+                    spanTagContent.innerText=content
                     olTag.appendChild(liTag)
+                    liTag.appendChild(spanTagName)
+                    liTag.appendChild(spanTagContent)
                     contentInput.value=''
                 })
             }
@@ -71,11 +76,16 @@
                 for (let i=0;i<array.length;i++) {
                     var liTag=document.createElement('li')
                     var olTag=document.querySelector('section.message > .messageBoard')
-                    array[i].content=array[i].content.replace(/\r\n/g,"<BR>")
-                    array[i].content=array[i].content.replace(/\n/g,"<BR>")
-                    array[i].content=array[i].content.replace(/ /g,"&nbsp;")
-                    liTag.innerHTML=`<span style="color:red;">${array[i].name}  :</span><br>${array[i].content}`
+                    var spanTagName=document.createElement('span')
+                    var spanTagContent=document.createElement('span')
+                    // array[i].content=array[i].content.replace(/ /g,"&nbsp;")
+                    spanTagName.innerText=array[i].name+`  :\n`
+                    spanTagName.style="color:red;"
+                    spanTagContent.style="white-space:pre;"
+                    spanTagContent.innerText=array[i].content
                     olTag.appendChild(liTag)
+                    liTag.appendChild(spanTagName)
+                    liTag.appendChild(spanTagContent)
                 }
             })
         }

@@ -80,57 +80,18 @@ section .swiper-button-next{    outline:none;   background-color:white;    box-s
     height:78px;    border-radius:50%;    right:100%;    left:auto;}
 section .swiper-button-next{    left:100%;    right:auto;}
 section.portfolio .swiper-container img{height:666px; align-items: center;}
-section.message{
-    margin-bottom:150px;    
-}
-section.message form{
-    text-align: left;
-    font-size:24px;
-    width:930px;
-    margin:20px auto;
+section.message{   margin-bottom:150px;    }
+section.message form{    text-align: left;    font-size:24px;    width:930px;    margin:20px auto;
     /* padding:15px;
     border:3px solid #3D4451;
     border-radius: 9px;
-    box-shadow: 0px 0px 8px -4px rgba(0,0,0,0.75);  */
-}
-section.message label{
-    margin-right:30px;
-}
-section.message ol {
-    display: inline-block;
-    width:930px;
-    text-align: left;
-    margin:20px auto;
-    font-size: 24px;
-    border-top:3px solid #ddd;
-    border-radius:9px;
-}
-section.message li {
-    padding:15px;
-    border-bottom:3px solid #ddd;
-    border-right:3px solid #ddd;
-    border-left:3px solid #ddd;
+    box-shadow: 0px 0px 8px -4px rgba(0,0,0,0.75);  */}
+section.message label{    margin-right:30px;}
+section.message ol {    display: inline-block;    width:930px;text-align: left;    margin:20px auto;    font-size: 24px;    border-top:3px solid #ddd;    border-radius:9px;}
+section.message li {    padding:15px;    border-bottom:3px solid #ddd;    border-right:3px solid #ddd;    border-left:3px solid #ddd;
     word-wrap:break-word; /*连续的数字或者英文就会不换行 得使用强制换行*/
 	word-break:break-all;  /*连续的数字或者英文就会不换行 得使用强制换行*/
-    border-radius:9px;
-    box-shadow: 0px 0px 8px -4px rgba(0,0,0,0.75); 
-}
-section.message input[name="name"]{
-    vertical-align:center;
-    margin-bottom:20px;
-    line-height: 25px;
-}
-section.message textarea[name="content"] {
-    margin-left:5px;
-    width:791px;
-    height:300px;
-    font-size:24px;
-    vertical-align: top;
-    font-family: "黑体";
-}
-section.message input[value="留言提交"]{
-    margin-top:15px;
-    margin-left:106px;
-    font-size: 20px;
-    font-family: "华文中宋";
-}
+    border-radius:9px;    box-shadow: 0px 0px 8px -4px rgba(0,0,0,0.75); }
+section.message input[name="name"]{    vertical-align:center;    margin-bottom:20px;    line-height: 25px;}
+section.message textarea[name="content"] {    margin-left:5px;    width:791px;    height:300px;    font-size:24px;    vertical-align: top;    font-family: "黑体";}
+section.message input[value="留言提交"]{    margin-top:15px;    margin-left:106px;    font-size: 20px;font-family: "华文中宋";}
