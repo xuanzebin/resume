@@ -30,4 +30,12 @@
             liTarget.classList.remove('active')
         }
     }
+    var worksTags=document.querySelectorAll('ul.submenu>li[data-work]')
+    for(let i=0;i<worksTags.length;i++) {
+        worksTags[i].addEventListener('click',(e)=>{
+            let Target=e.currentTarget
+            let aTag=document.querySelector(Target.attributes['data-work'].value)
+            aTag.click()
+        })
+    }
 }.call()

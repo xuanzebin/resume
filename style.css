@@ -14,6 +14,9 @@ ul,ol {text-decoration: none;list-style:none;}
     transform: translateY(-200px);  opacity: 0;transition: all 0.5s; }
 .topNavBar nav>ul>li{position:relative; float: left;list-style: none; margin-top:3px; margin-bottom:3px;margin-left:17px;margin-right:17px;padding-bottom:12px;}
 .topNavBar nav>ul>li>a{position:relative;color:inherit;font-size:15px; font-weight:bold;padding-bottom:9px;}
+.topNavBar .submenu li:hover{
+    color:#E8676B;
+}
 .topNavBar nav>ul>li .submenu{display:none; position:absolute; right:0; top:79%; white-space:nowrap; padding:13px 15px 7px 15px;background:white;box-shadow: 0 0 10px  rgba(0,0,0,0.25);}
 .topNavBar nav>ul>li .submenu>li {padding-bottom:6px;color:#3F4653;}
 .topNavBar nav>ul .menuTrigger.active> .submenu {display:block; animation:submenuSlide 0.2s linear; cursor:pointer; }
@@ -93,5 +96,5 @@ section.message li {    padding:15px;    border-bottom:3px solid #ddd;    border
 	word-break:break-all;  /*连续的数字或者英文就会不换行 得使用强制换行*/
     border-radius:9px;    box-shadow: 0px 0px 8px -4px rgba(0,0,0,0.75); }
 section.message input[name="name"]{    vertical-align:center;    margin-bottom:20px;    line-height: 25px;}
-section.message textarea[name="content"] {    margin-left:5px;    width:791px;    height:300px;    font-size:24px;    vertical-align: top;    font-family: "黑体";}
+section.message textarea[name="content"] {    resize:none; margin-left:5px;    width:791px;    height:300px;    font-size:24px;    vertical-align: top;    font-family: "黑体";}
 section.message input[value="留言提交"]{    margin-top:15px;    margin-left:106px;    font-size: 20px;font-family: "华文中宋";}
