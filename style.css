@@ -95,6 +95,7 @@ section.message li {    padding:15px;    border-bottom:3px solid #ddd;    border
     word-wrap:break-word; /*连续的数字或者英文就会不换行 得使用强制换行*/
 	word-break:break-all;  /*连续的数字或者英文就会不换行 得使用强制换行*/
     border-radius:9px;    box-shadow: 0px 0px 8px -4px rgba(0,0,0,0.75); }
-section.message input[name="name"]{    vertical-align:center;    margin-bottom:20px;    line-height: 25px;}
-section.message textarea[name="content"] {    resize:none; margin-left:5px;    width:791px;    height:300px;    font-size:24px;    vertical-align: top;    font-family: "黑体";}
-section.message input[value="留言提交"]{    margin-top:15px;    margin-left:106px;    font-size: 20px;font-family: "华文中宋";}
+section.message input[name="name"]{    vertical-align:center;    margin-bottom:20px;    line-height: 25px;   border-radius: 5px;    box-shadow: inset 0px 0px 33px -16px rgba(0,0,0,0.75);}
+section.message textarea[name="content"] {      border-radius: 5px;   box-shadow: inset 0px 0px 37px -16px rgba(0,0,0,0.75); resize:none; margin-left:5px;    width:791px;    height:300px;    font-size:24px;    vertical-align: top;    font-family: "黑体";}
+section.message input[value="留言提交"]{       border-radius: 8px; background: linear-gradient(180deg, rgba(62,172,234,1) 0%, rgba(0,128,210,1) 100%);   border:rgba(0,128,210,1) 1px solid; color:white;    width:100px;    height:2em;     cursor: pointer;    outline:none;    margin-top:15px;    margin-left:106px;    font-size: 17px;font-family: "华文中宋";}
+section.message input[value="留言提交"]:hover{    background: linear-gradient(180deg, #2D8DD3 0%, #0452B8 100%); border:#0452B8 1px solid;}
