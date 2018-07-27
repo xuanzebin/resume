@@ -1,5 +1,5 @@
 !function(){
-    var view=document.querySelector('.slidesWrapper')
+    var view=View('.slidesWrapper')
     var controller={
         view:null,
         swiper:null,

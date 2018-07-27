@@ -1,5 +1,5 @@
 !function(){
-    var view=document.querySelector('nav>ul')
+    var view=View('nav>ul')
     var controller={
         view:null,
         initAnimate:function(){
